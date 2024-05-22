@@ -152,7 +152,7 @@ main {
 .movies {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: 30px;
   margin: 32px 0;
 }
 
