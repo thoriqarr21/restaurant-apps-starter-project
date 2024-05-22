@@ -5,7 +5,7 @@ class JumbotronHero extends HTMLElement {
     <article>
     <picture>
       <source media="(max-width: 600px)" srcset="./images/heros/hero-image_4-small.jpg" >
-      <img  class="jumbotron" src="./images/heros/hero-image_4-large.jpg">
+      <img  class="jumbotron" src="./images/heros/hero-image_4-large.jpg" alt="web image">
     </picture>
     </article>
         `;
