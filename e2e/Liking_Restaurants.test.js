@@ -41,4 +41,11 @@ Scenario('liking not restaurant', async ({ I }) => {
 
   const likedRestaurantName = await I.grabTextFrom('.resto__title');
   assert.strictEqual(firstRestaurantName, likedRestaurantName);
+
+  I.click(firstRestaurant);
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+
+  I.amOnPage('/#/favorite');
+  I.see('Tidak ada resto untuk ditampilkan', '.restaurant__not__found');
 });
