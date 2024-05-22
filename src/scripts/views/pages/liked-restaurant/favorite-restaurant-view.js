@@ -5,15 +5,13 @@ import { createRestaurantItemTemplate } from '../../templates/template-creator';
 
 class FavoriteRestaurantView {
   getTemplate() {
-    return `
-        <div id="restaurant-search-container">
-          <h2 class="content__heading">Your Liked Restaurant</h2>
-          
-          <div class="restaurant-result-container">
+    return `                
+        <h2 class="content__heading">Your Liked Restaurant</h2>               
+        <div class="restaurant-result-container">
           <div id="restaurant" class="movies">
-            </ul>
+
           </div>
-        </div>
+        </div
       `;
   }
 
@@ -40,12 +38,17 @@ class FavoriteRestaurantView {
   showFavoriteRestaurants(restaurants) {
     let html;
     if (restaurants.length) {
-      html = restaurants.reduce((carry, restaurant) => carry.concat(createRestaurantItemTemplate(restaurant)), '');
+      html = restaurants.reduce(
+        (carry, restaurant) => carry.concat(createRestaurantItemTemplate(restaurant)),
+        '',
+      );
     } else {
       html = this._getEmptyRestaurantTemplate();
     }
     document.getElementById('restaurant').innerHTML = html;
-    document.getElementById('restaurant').dispatchEvent(new Event('restaurant:updated'));
+    document
+      .getElementById('restaurant')
+      .dispatchEvent(new Event('restaurant:updated'));
   }
 
   _getEmptyRestaurantTemplate() {
